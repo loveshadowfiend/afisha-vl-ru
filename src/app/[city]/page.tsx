@@ -6,6 +6,7 @@ export default function Home() {
     <div className="w-full min-w-screen">
       <EventsTab />
       <EventBlock eventCategory="concerts" />
+      <EventBlock eventCategory="pushkin" />
     </div>
   );
 }
