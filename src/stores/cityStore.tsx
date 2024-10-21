@@ -1,26 +1,30 @@
 import { Cities } from "@/types/enums";
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
-type CityState = {
+export type CityState = {
   value: keyof typeof Cities;
   label: string;
 };
 
-type CityActions = {
+export type CityActions = {
   updateCity: (value: keyof typeof Cities, label: string) => void;
 };
 
-type CityStore = CityState & CityActions;
+export type CityStore = CityState & CityActions;
 
-export const useCityStore = create<CityStore>((set) => {
-  return {
-    value: "vladivostok",
-    label: "Владивосток",
+export const useCityStore = create<CityStore>()(
+  persist(
+    (set) => ({
+      value: "vladivostok",
+      label: "Владивосток",
 
-    updateCity: (value: keyof typeof Cities, label: string) => {
-      set(() => {
-        return { value: value, label: label };
-      });
-    },
-  };
-});
+      updateCity: (value: keyof typeof Cities, label: string) => {
+        set(() => ({ value, label }));
+      },
+    }),
+    {
+      name: "afisha-vl-ru-city",
+    }
+  )
+);

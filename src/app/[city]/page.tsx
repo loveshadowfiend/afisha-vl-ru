@@ -1,12 +1,12 @@
 import EventBlock from "@/components/event-block";
-import EventsTab from "@/components/events-tab";
+import EventsPopular from "@/components/events-popular";
 
 export default function Home() {
   return (
-    <div className="w-full min-w-screen">
-      <EventsTab />
-      <EventBlock eventCategory="concerts" />
-      <EventBlock eventCategory="pushkin" />
+    <div className="mt-[20px] w-full min-w-screen flex gap-[20px] flex-col">
+      <EventsPopular city="vladivostok" />
+      <EventBlock city="vladivostok" eventCategory="concerts" />
+      <EventBlock city="vladivostok" eventCategory="pushkin" />
     </div>
   );
 }

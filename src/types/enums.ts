@@ -6,13 +6,13 @@ export enum EventCategories {
   sport = "Спорт",
   city = "Городское событие",
   museums = "Музеи и галереи",
-  cinema = "Кино",
   pushkin = "Пушкинская карта",
   tours = "Эскурсии и туры",
   parties = "Вечеринки",
   impressions = "Впечатления",
   masterclasses = "Мастер-классы",
   learning = "Обучение",
+  cinema = "Кино",
 }
 
 export enum Cities {

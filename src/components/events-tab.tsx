@@ -1,8 +1,11 @@
 import { EventCategories } from "@/types/enums";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import Link from "next/link";
+import { cookies } from "next/headers";
 
 export default function EventsTab() {
+  const cookieStore = cookies();
+
   return (
     <ScrollArea>
       <nav>

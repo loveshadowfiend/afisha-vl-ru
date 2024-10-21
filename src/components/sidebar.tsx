@@ -1,20 +1,36 @@
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { MapPin, Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 import CitySelect from "./city-select";
+import Link from "next/link";
 
 export default function Sidebar() {
   return (
     <Sheet>
       <SheetTrigger>
-        <Menu />
+        <Menu size={24} />
       </SheetTrigger>
-      <SheetContent className="w-[70vw] px-0" side={"left"}>
-        <div className="mx-default-mobile-x">
-          <div className="flex items-center">
-            <MapPin className="h-[24px]" />
-            <CitySelect />
-          </div>
-        </div>
+      <SheetContent className="w-[75vw]" side={"left"}>
+        <SheetHeader>
+          <SheetTitle className="text-start">Афиша</SheetTitle>
+        </SheetHeader>
+        <SheetDescription className="flex items-center">
+          <CitySelect />
+        </SheetDescription>
+        <nav>
+          <ul className="flex flex-col gap-4 py-[20px]">
+            <li className="flex items-center">
+              <Link href="https://vl.ru/">Вернуться на главную VL.ru</Link>
+            </li>
+            <li></li>
+          </ul>
+        </nav>
       </SheetContent>
     </Sheet>
   );
